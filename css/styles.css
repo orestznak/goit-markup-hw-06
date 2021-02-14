@@ -739,8 +739,15 @@ footer .socialbar-list-item:not(:last-child) {
   right: 8px;
   width: 30px;
   height: 30px;
-  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  background-image: url("../images/modal/close.svg");
   cursor: pointer;
+  transition: background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-close-modal:hover,
+.btn-close-modal:focus {
+  background-image: url("../images/modal/close-hover.svg");
 }
 
 .contact-form {
@@ -845,11 +852,12 @@ footer .socialbar-list-item:not(:last-child) {
   border-radius: 2px;
   content: "";
   margin-right: 8px;
+  transition: border background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-form-check-policy:checked + .contact-form-label-policy::before {
   border: 0;
-  background-image: url("../images/icon-check.svg");
+  background-image: url("../images/modal/icon-check.svg");
 }
 
 .contact-form-label-policy {
@@ -861,7 +869,9 @@ footer .socialbar-list-item:not(:last-child) {
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
 }
-
+.contact-form-label-policy span {
+  margin-right: 5px;
+}
 .contact-form-label-policy a {
   color: var(--accent-color);
 }
